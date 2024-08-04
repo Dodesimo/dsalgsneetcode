@@ -145,4 +145,16 @@
 			7. Time complexity: 
 				1. More confusing: just think how many nodes there can be. 2^(2n) --> O(4^n).
 				2. 2^(2n-1) leaves at most --> O(4^n).
-			8. 
+14. Daily Temperatures:
+	1. Brute force approach:
+		1. Nested loops, for a given i day, go through every other day and see whats greater, subtract i - j, that is how many days it takes, but its O(n^2).
+	2. Answer: 
+		1. Monotonic stack.
+		2. Meaning, only values that are less than the previous one will be present in the stack.
+		3. Create a output array that stores the results.
+		4. Create a Stack of integer arrays (THIS IS VERY IMPORTANT YOU CANNOT DO THIS WITH A HASHMAP BECAUSE VALUES WILL BE OVERWRITTEN).
+		5. Iterate through the array.
+			1. While the stack is non empty and the peeked value is less than the current value, you pop the value off of the stack, and you set the second value of the popped array as the index where you assign the difference between i and the popped value's index.
+			2. Otherwise, you just add a new array to the stack that contains value and index.
+		6. O(n)
+15. bhny tgvdx
