@@ -108,6 +108,7 @@
 		2. Min stack: if the stack is empty, or the value is less than peek of the min stack, add the value. Else, just add the last minimum again.
 	4. pop:
 		1. Normal pop: just pop from both.
+			1. REMMBER TO POP FROM BOTH. 
 	5. top:
 		1. peek from the normal stack.
 	6. get min:
@@ -157,4 +158,32 @@
 			1. While the stack is non empty and the peeked value is less than the current value, you pop the value off of the stack, and you set the second value of the popped array as the index where you assign the difference between i and the popped value's index.
 			2. Otherwise, you just add a new array to the stack that contains value and index.
 		6. O(n)
-15. bhny tgvdx
+15. Car Fleet (HARD)
+	1. Question confused me when I first read it, but intuitiion after makes so much sense.
+		1. Idea: if a car behind another car (in terms of position) takes **LESS TIME** to reach the target, the two will form a car fleet.
+	2. Therefore:
+		1. Optimal solution:
+			1. Group the two arrays together by making a 2d array that contains position and speed.
+			2. Sort this array in descending order (items with positions that are closer to target will be in the front, iterator lambda function (b - a).
+			3. Then, iterate through this array. If the i is greater than equal to one, and the time calculated present at i is less than the time at i -1, time[i] = time[i-1].
+			4. Else, we add to the number of fleets.
+				1. This is because this means that the cars will not catch up, and thus a unique fleet will be formed.
+			5. Complexity: O(n)
+16. Largest Rectangle in Histogram:
+	1. Intuition: when you see a bar that is smaller than the one you are currently in, calculate area using limits of the bar, and keep repeating. The limits extend by one. 
+	2. Algorithm:
+		1. Iterate through the array sequentially.
+		2. While the stack is not empty, and the element currently at is smaller than the element in the stack.
+			1. Pop the element, and calculate the max area by doing height (of the popped)* (i - popped (index))*
+			2. Then, the starting index is going to be index of the last popped.
+				1. Make the smallest one's index be at the last element that is bigger than it. 
+		3. Outside the while loop, insert to the array the element's index and the actual element. 
+		4. After we rule out all possibilities where a larger bar hits a smaller one, we get stuck with all the smaller ones that can extend into left and/or right.
+		5. Compare the areas of these smaller ones, with their areas being their length - index. 
+		6. SO.... 
+			1. **Monotonic increasing stack.**
+				1. Why? Because the first case of rectangles can be formed going forwards, while taking into account the possibility of rectangles occuring backwards on a second pass. 
+				2. Stack contains bars.
+				3. Pop a bar and calculate its potential area. 
+				4. When you reach the last bar, its index is going to be the start. 
+		7. Complexity: O(n)
