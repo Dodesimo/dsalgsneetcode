@@ -166,6 +166,8 @@
 			1. Group the two arrays together by making a 2d array that contains position and speed.
 			2. Sort this array in descending order (items with positions that are closer to target will be in the front, iterator lambda function (b - a).
 			3. Then, iterate through this array. If the i is greater than equal to one, and the time calculated present at i is less than the time at i -1, time[i] = time[i-1].
+				1. MAKE SURE TO USE A COLLECTION FOR THIS.
+				2. COLLECTION STORES TIMES
 			4. Else, we add to the number of fleets.
 				1. This is because this means that the cars will not catch up, and thus a unique fleet will be formed.
 			5. Complexity: O(n)
@@ -187,3 +189,15 @@
 				3. Pop a bar and calculate its potential area. 
 				4. When you reach the last bar, its index is going to be the start. 
 		7. Complexity: O(n)
+				1. YOU ARE COMPARING HEIGHTS, SO DONT JUST USE I.
+17. Is Palindrome:
+	1. Two pointer approach.
+	2. First, make everything lowercase.
+	3. Then, set your left pointer to 0
+	4. Set your right pointer to the size of array - 1. 
+	5. While the left pointer is less than the right pointer:
+		1. While its less, and the Character.isLetterOrDigit is false, increment Left pointer.
+		2. Same thing but with decreasing right pointer.
+		3. If the place where the two are have different characters, then return false.
+		4. Increment left pointer and decrement right pointer.
+		5. Return true after. 
