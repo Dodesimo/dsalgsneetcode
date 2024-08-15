@@ -1,0 +1,4 @@
+- SIG:
+	- Forgot how comparator works and instead tried to do some bullshit hashmap thing. 
+	- Simplify things and do that.
+	- This shit is hard, keep at it. 

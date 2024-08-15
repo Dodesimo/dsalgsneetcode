@@ -201,3 +201,27 @@
 		3. If the place where the two are have different characters, then return false.
 		4. Increment left pointer and decrement right pointer.
 		5. Return true after. 
+18. Two Sum II --> Input Array is Sorted
+	1. Two pointer approach again.
+	2. Note that when it asks for a one-based index, that means the starting index will be 1. 
+	3. Array is sorted: so take advantage of what is greater or less than the array. 
+	4. Worst case: brute force go through every combination.
+		1. Obviously a O(n^2) approach.
+	5. Smarter way.
+		1. Compute the sum for left and right pointer.
+		2. Then, if the sum is greater than the target, we decrease the right pointer.
+		3. If the sum is less than the target, we increase the left pointer. 
+		4. Keep doing this till 
+		5. Worst case: O(n);.
+19. Three Sum:
+	1. Optimal solution:
+		1. Sort array.
+			1. Handles duplicates.
+		2. If on the left, we continue (skip, because we have visited all combinations with that number).
+		3. Then, use two-sum two approach:
+			1. If the sum is high, we will reduce the right pointer.
+			2. If the sum is too low, we will increase the left pointer.
+		4. If equal
+			1. Add values to list, then add list to list of lists. 
+			2. While left is less than right, and the value to the left is the same as the value to the right, you want to increment left. 
+	2. Time complexity: O(n log n), which is the sorting aspect, and then O(n^2), because there is a loop to get the outside first number, and then another loop to get the left and the right pointer. 
