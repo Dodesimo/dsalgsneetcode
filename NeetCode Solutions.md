@@ -225,3 +225,11 @@
 			1. Add values to list, then add list to list of lists. 
 			2. While left is less than right, and the value to the left is the same as the value to the right, you want to increment left. 
 	2. Time complexity: O(n log n), which is the sorting aspect, and then O(n^2), because there is a loop to get the outside first number, and then another loop to get the left and the right pointer. 
+20. Container with Most Water:
+	1. Limiting factor: the shortest bar.
+	2. Approach: two pointers. 
+	3. Left pointer at the start, right pointer at the end. 
+	4. Calculate present area.
+	5. set that as the max. 
+	6. If the height at the left pointer is less than the height at the right pointer, you know that is the limiting factor so increment that.
+	7. If the height at the right pointer is less, just shift that to the left. 
