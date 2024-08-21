@@ -233,3 +233,18 @@
 	5. set that as the max. 
 	6. If the height at the left pointer is less than the height at the right pointer, you know that is the limiting factor so increment that.
 	7. If the height at the right pointer is less, just shift that to the left. 
+21. Trapping Rain Water
+	1. This is very hard imo.
+	2. The idea: the smallest bar of the maximal possible left and right bars will dictate how much water there is.
+	3. Idea is that depending on whether the left max or the right max is less, we adjust the left pointer or right pointer respectively.
+	4. When we do so, we then calculate the area (which is easy, because it will be the lowest of the left or the right) subtracted from the height at the bar. 
+	5. From there, we recalculate the leftMax or rightMax based on the leftMax or rightMax is less with the current height. 
+	6. Complexity: O(n), O(1) space. 
+22. Best time to buy or sell stock:
+	1. Idea: we buy low, sell high.
+	2. 2 pointer approach: start at the first two indices.
+	3. If our right is less than our left, we know that its smarter to buy then, so we will make left right.
+	4. Then, we increment right.
+	5. Else, we see whether it beats the max, and we increment right again. 
+	6. One directional pointer. 
+	7. O(n), O(1)
