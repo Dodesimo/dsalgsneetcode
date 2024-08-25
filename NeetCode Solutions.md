@@ -248,3 +248,23 @@
 	5. Else, we see whether it beats the max, and we increment right again. 
 	6. One directional pointer. 
 	7. O(n), O(1)
+23. Longest Unique Substring
+	1. Idea: sliding window.
+	2. When is the sliding window violated?
+		1. When we encounter a duplicate element. 
+		2. If we encounter a duplicate element, we pop items from the leftIndex.
+		3. We increment leftIndex.
+		4. After the sliding window is valid, we insert the character at the right index.
+		5. We then update the max size by considering right - left + 1.
+	3. O(N) time. 
+	4. We then increment the right pointer. 
+24. Longest Repeating Substring with Replacement.
+	1. Idea: sliding window technique where we find majority element so far. 
+	2. Concept:
+		1. We look at element at the right pointer.
+		2. We increase its frequency. 
+		3. We then assess the majority element's frequency. 
+		4. From there, if the window size minus majority element three's frequency is valid (less than equal to k), we update the maxLength.
+		5. Else, while the leftPointer is less than right and the opposite of 4 is true, we decrease frequency of the leftPointer's item, and we increment the leftPointer.
+		6. At the end, we increment the right pointer.
+		7. O(26n) because we traverse through the main array and we find the max of the frequency list. 
